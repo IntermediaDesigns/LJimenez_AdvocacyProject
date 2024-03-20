@@ -5,64 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Code Blasters</title>
-
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="img/favicon-16x16.png"
+    />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
-
     <link href="reset.css" rel="stylesheet" type="text/css" />
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link href="reset-webview.css" rel="stylesheet" type="text/css" />
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f0f0f0;
-        color: #333;
-      }
-
-      .content {
-        margin: 15px;
-      }
-      .btn {
-        display: inline-block;
-        color: white;
-        background-color: #007bff;
-        padding: 10px 20px;
-        margin: 10px 2px;
-        border: 1px solid black;
-        border-radius: 10px;
-        cursor: pointer;
-        text-decoration: none;
-      }
-      .btn:hover {
-        background-color: yellow;
-        color: black;
-      }
-      img {
-        width: 500px;
-        height: auto;
-      }
-    </style>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Changa:wght@200..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <!--- Headings --->
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top" >
+      <div class="w3-white w3-card" id="myNavbar">
+        <div>
+          <a href="#home"
+            ><img class="logoImg" onclick="scrollToTop()"  src="img/logo.png" alt="logo"
+          /></a>
+        </div>
 
-    <img src="./kid.jpg" alt="Coding Image 1" />
+        <!-- Right-sided navbar links -->
+        <div id="links" class="w3-right w3-hide-small">
+          <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+          <a href="#mission" class="w3-bar-item w3-button"><i></i>MISSION</a>
+          <a href="" class="w3-bar-item w3-button"><i></i> LOGIN</a>
+          <a href="" class="w3-bar-item w3-button"><i></i> SIGN UP</a>
+          <button onclick="darkMode()">Darkmode</button>
+        </div>
 
-    <div class="content">
-      <h1>My Activism Project: Code Blasters</h1>
-      <h3>Empowering Unique Minds Through the Power of Coding!</h3>
+        <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
-      <button class="btn" type="button">Login</button>
-      <button class="btn" type="button">Sign Up</button>
+        <a
+          id="hamburger"
+          href="javascript:void(0)"
+          class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
+          onclick="w3_open()"
+        >
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+    </div>
 
-      <!--- About --->
-      <h2>About My Topic</h2>
+    <!-- Sidebar on small screens when clicking the menu icon -->
+    <nav
+      class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large"
+      style="display: none"
+      id="mySidebar"
+    >
+      <a
+        href="javascript:void(0)"
+        onclick="w3_close()"
+        class="w3-bar-item w3-button w3-large w3-padding-16"
+        >Close ×</a
+      >
+      <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button"
+        >ABOUT</a
+      >
+      <a href="#mission" onclick="w3_close()" class="w3-bar-item w3-button"
+        >MISSION</a
+      >
+      <a href="#" onclick="w3_close()" class="w3-bar-item w3-button"
+        >LOGIN</a
+      >
+      <a href="" onclick="w3_close()" class="w3-bar-item w3-button"
+        >SIGN UP</a
+      >
+    </nav>
+
+    <!-- Header with full-height image -->
+    <header class="bgimg-1">
+      <div class="headerContainer">
+        <button class="headerBtn" type="button">Sign Up</button>
+      </div>
+    </header>
+
+    <!--- About Section --->
+
+    <div id="about" class="aboutContainer">
+      <h1 class="header1" id="aboutHeaderText">
+        My Activism Project: Code Blasters
+      </h1>
+      <div class="aboutHeader">
+        <img id="kidImg" src="img/kid.jpg" alt="Coding Image 1" />
+        <h3 class="header3">
+          Empowering Unique Minds Through the Power of Coding!
+        </h3>
+      </div>
+
+      <h2 class="header2">About</h2>
       <p>
         Welcome to Code Blasters, a unique platform dedicated to empowering kids
         and young adults with ADHD and other disabilities through the world of
@@ -81,29 +136,42 @@
         on this exciting journey to blast through barriers and unlock a world of
         possibilities with code!"
       </p>
+    
+      <div class="aboutButtons">
+        <button class="btn" type="button">Login</button>
+        <button class="btn" type="button">Sign Up</button>
+      </div>
+    </div>
 
-      <img src="./children.jpg" alt="Coding Image 2" />
-
-      <h3>Our Mission</h3>
-      <p>
-        Our mission is to create a nurturing, inclusive, and engaging learning
-        environment that breaks down barriers and unlocks the potential within
-        each student. We strive to foster creativity, problem-solving skills,
-        and confidence in our students, equipping them with the tools to not
-        only understand the digital world but also to shape it. At Code
-        Blasters, we believe in transforming challenges into opportunities for
-        growth and innovation through the power of coding.
-      </p>
+    <!--- Mission Section --->
+      <div id="mission" class="missionContainer">
+        <div class="missionHeader">
+        <h1 id="missionHeaderText" class="header1">Our Mission</h1>
+        <img class="childrenImg" src="img/children.png" alt="Coding Image 2" />
+        </div>
+        
+        <p class="missionText">
+          Our mission is to create a nurturing, inclusive, and engaging learning
+          environment that breaks down barriers and unlocks the potential within
+          each student. We strive to foster creativity, problem-solving skills,
+          and confidence in our students, equipping them with the tools to not
+          only understand the digital world but also to shape it. At Code
+          Blasters, we believe in transforming challenges into opportunities for
+          growth and innovation through the power of coding.
+        </p>
+      </div>
 
       <!--- Data --->
-
-      <h3>Data about my topic</h3>
+    <div class="dataContainer">
+<div class="dataHeader">
+      <h3 class="header3" id="dataHeaderText">Data about my topic</h3>
 
       <img
+        class="dataImg"
         src="https://www.codingal.com/resources/wp-content/uploads/2023/10/adhd2.png"
         alt="Data Image"
       />
-
+  </div>
       <p>
         Coding is not just a hobby; it’s a valuable skill in today’s job market.
         Furthermore, the US Bureau of Labor Statistics has projected that by
@@ -118,15 +186,17 @@
         development, game design, data analysis, or other related fields.
       </p>
 
-      <img
-        src="https://www.codingal.com/resources/wp-content/uploads/2023/10/adhd7.png"
-      />
-
+     
+      </div>
       <!--- Impact --->
-      <h2>Impact!</h2>
-
-      <img src="" />
-      <h3>Enhancing Cognitive Skills</h3>
+<div class="impactContainer">
+    <div class="dataHeader">
+      <h2 class="header2">Impact!</h2>
+    <img class="dataImg"
+      src="https://www.codingal.com/resources/wp-content/uploads/2023/10/adhd7.png"
+    />
+      </div>
+      <h3 class="header3">Enhancing Cognitive Skills</h3>
       <p>
         Children with ADHD often struggle with sustaining attention and focus.
         Coding requires systematic thinking, problem-solving, and attention to
@@ -134,8 +204,8 @@
         engaged in tasks.
       </p>
 
-      <img src="" />
-      <h3>Developing Logical and Sequential Thinking</h3>
+      
+      <h3 class="header3">Developing Logical and Sequential Thinking</h3>
       <p>
         Coding involves breaking down complex problems into smaller, manageable
         steps, promoting logical and sequential thinking. This structured
@@ -143,22 +213,17 @@
         prefer routines and order.
       </p>
 
-      <img src="" />
-      <h3>Strengthening Memory and Processing Speed</h3>
+      
+      <h3 class="header3">Strengthening Memory and Processing Speed</h3>
       <p>
         Through coding, children must remember and execute various commands and
         algorithms. This process can enhance their working memory and processing
         speed, which are vital cognitive skills.
       </p>
     </div>
-
-    <!--Stretch Goals --->
-    <a
-      href="https://www.codingal.com/coding-for-kids/blog/how-can-coding-help-kids-with-adhd/"
-      target="_blank"
-    ></a>
-
+<div class="youtubeVideo">
     <iframe
+      
       width="560"
       height="315"
       src="https://www.youtube.com/embed/FmkMT_QXV9o?si=jEWok49m71XbZBMW"
@@ -166,6 +231,36 @@
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       allowfullscreen
+      style="border-radius: 15px;"
     ></iframe>
+  </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <a href="#home" id="btn" class="w3-button w3-light-grey"
+        onclick="scrollToTop()"
+        ><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a
+      >
+      <div class="w3-xlarge w3-section">
+        <i class="fa fa-facebook-official w3-hover-opacity"></i>
+        <i class="fa fa-instagram w3-hover-opacity"></i>
+        <i class="fa fa-snapchat w3-hover-opacity"></i>
+        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+        <i class="fa fa-twitter w3-hover-opacity"></i>
+        <i class="fa fa-linkedin w3-hover-opacity"></i>
+      </div>
+      <p>
+        Developed by
+        <a
+          href="https://github.com/IntermediaDesigns"
+          title="GitHub Profile"
+          target="_blank"
+          class="w3-hover-text-orange"
+          >Lynjai Jimenez</a
+        >
+      </p>
+    </footer>
   </body>
 </html>

@@ -2,96 +2,271 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  height: 100%;
+  line-height: 1.8;
+  background-color: #FBFBFB;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+p {
+  letter-spacing: .05em;
+  line-height: 1.25;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.1em;
 }
 
-* {
-  box-sizing: border-box;
+.header1,
+.header2,
+.header3 {
+  font-family: "Changa", sans-serif;
 }
 
-main {
-  min-height: 100vh;
-  padding: 4rem 2rem;
-  flex: 1;
+.content {
+  margin: 15px;
+}
+
+.btn,
+#btn {
+  font-weight: bold;
+  font-size: 18px;
+  color: #fbfbfb;
+  background: linear-gradient(90deg, #e9c46a 0%, #e76f51 100%);
+  padding: 10px 30px;
+  border: none;
+  box-shadow: rgb(0, 0, 0) 5px 5px 25px -11px;
+  border-radius: 50px;
+  transition: 1594ms;
+  transform: translateY(0);
+  cursor: pointer;
+  font-style: none;
+  letter-spacing: .06em;
+  font-family: "Raleway", sans-serif;
+}
+
+.btn:hover,
+#btn:hover,
+.headerBtn:hover {
+  transition: 1594ms;
+  padding: 10px 38px;
+  transform: translateY(-0px);
+  background: linear-gradient(90deg, #e9c46a 0%, #e76f51 100%);
+  color: #000000;
+  border: none;
+  font-family: "Raleway", sans-serif;
+}
+
+img {
+  width: 500px;
+  height: auto;
+}
+
+/* Light & Dark Mode button  */
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+/* Full height image header */
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("/img/bkg.png");
+  min-height: 100%;
+
+}
+
+.w3-button {
+  padding: 16px;
+  border-radius: 16px;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: .05em;
+}
+
+.w3-button:hover {
+  background: linear-gradient(90deg, #e9c46a 0%, #e76f51 100%);
+  font-weight: 600;
+  box-shadow: rgb(0, 0, 0) 5px 5px 25px -11px;
+}
+
+.logoImg {
+  width: 70px;
+  height: auto;
+  margin: 12px 12px 12px 1rem;
+}
+
+/* Navbar */
+#myNavbar {
+  display: flex;
+  align-items: center;
+  padding-right: 1rem;
+}
+
+#links {
+  display: flex;
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+#hamburger {
+  margin-left: auto;
+  font-size: 25px;
+}
+
+
+/* Header */
+.headerContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  padding-top: 55%;
 }
 
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
+.headerBtn {
+  font-weight: bold;
+  font-size: 38px;
+  color: #fbfbfb;
+  background: linear-gradient(90deg, #e9c46a 0%, #e76f51 100%);
+  padding: 20px 80px;
+  border: none;
+  box-shadow: rgb(0, 0, 0) 5px 5px 25px -11px;
+  border-radius: 50px;
+  transition: 1594ms;
+  transform: translateY(0);
+  cursor: pointer;
+  font-style: none;
+  letter-spacing: .06em;
+  font-family: "Raleway", sans-serif;
 }
 
-.title,
-.description {
+.headerBtn:hover {
+  transition: 1594ms;
+  padding: 30px 90px;
+  transform: translateY(-0px);
+  background: linear-gradient(90deg, #e9c46a 0%, #e76f51 100%);
+  color: #000000;
+  border: none;
+  font-family: "Raleway", sans-serif;
+}
+
+/*  About Section */
+.aboutContainer {
+  margin-top: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+#aboutHeaderText {
+  text-align: center;
+  font-size: 3.5rem;
+}
+
+.aboutHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   text-align: center;
 }
 
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
+#kidImg {
+  width: 500px;
+  height: auto;
 }
 
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+.header3 {
+  font-weight: 600;
+  font-size: 2rem;
 }
 
-.grid {
+.aboutButtons {
   display: flex;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
+  gap: 10px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
+/*  Mission Section */
+.missionContainer {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background-color: #1C58A1;
 }
 
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+#missionHeaderText {
+  padding-top: 2rem;
+  text-align: center;
+  font-size: 3.5rem;
+  color: white;
 }
 
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
+.missionText {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  color: white;
+  padding-bottom: 2rem;
+  text-align: center;
 }
 
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
+.missionHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
+.childrenImg {
+  width: 500px;
+  height: auto;
+}
+
+/*  Data Section */
+.dataContainer {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.dataHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#dataHeaderText {
+  text-align: center;
+  font-size: 3.5rem;
+}
+
+.dataImg {
+  width: 500px;
+  height: auto;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+}
+
+.impactContainer {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.youtubeVideo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  
+}
+
+/*  footer  */
+.footer {
+  background-color: #1C58A1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  color: white;
 }
