@@ -1,8 +1,8 @@
 // Toggle dark mode class
 function darkMode() {
-  var element = document.body;
-  element.classList.toggle('dark-mode');
-}
+       document.body.classList.toggle('dark-mode');
+       document.getElementById('myNavbar').classList.toggle('dark-mode-navbar');
+     }
 
 // Modal Image Gallery
 function onClick(element) {
