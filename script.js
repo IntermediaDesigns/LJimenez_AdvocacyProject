@@ -57,26 +57,20 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
-});
-
-function validateForm(event) {
-  event.preventDefault();
-  let containsErrors = false;
-  const petitionInputs = document.querySelectorAll(".petition-form input");
-  // Assuming petitionForm is the form to submit
-const petitionForm = document.querySelector(".petition-form");
-
-// Attach the event listener to the 'submit' event of the form
-petitionForm.addEventListener('submit', validateForm);
-
-  for (let i = 0; i < petitionInputs.length; i++) {
-    if (petitionInputs[i].value.length < 2) {
-      containsErrors = true;
-      petitionInputs[i].classList.add('error');
-    } else {
-      petitionInputs[i].classList.remove('error');
+  function validateForm(event) {
+    event.preventDefault();
+    let containsErrors = false;
+    const petitionInputs = document.querySelectorAll(".petition-form input");
+    
+  
+    for (let i = 0; i < petitionInputs.length; i++) {
+      if (petitionInputs[i].value.length < 2) {
+        containsErrors = true;
+        petitionInputs[i].classList.add("error");
+      } else {
+        petitionInputs[i].classList.remove("error");
+      }
     }
-  }
 
   // If there are no errors, call addSignature() and clear the form
   if (!containsErrors) {
@@ -89,8 +83,13 @@ petitionForm.addEventListener('submit', validateForm);
     containsErrors = false;
   }
 }
+const signNowButton = document.getElementById('signButton');
+const petitionForm = document.querySelector('.petition-form');
+signNowButton.addEventListener("click", validateForm);
+// Assuming petitionForm is already defined
+petitionForm.addEventListener("submit", validateForm);
 
-signNowButton.addEventListener('click', validateForm);
+let totalSignatures = 0;
 
 function addSignature() {
   const name = document.getElementById("name").value;
@@ -100,4 +99,16 @@ function addSignature() {
   const newSupporter = document.createElement("p");
   newSupporter.textContent = `✅ ${name} from ${hometown} supports this cause.`;
   supportDiv.appendChild(newSupporter);
+
+  const numSignatures = document.getElementById("numSignatures");
+  totalSignatures++;
+  numSignatures.innerHTML = `Total Signatures: ${totalSignatures}`;
 }
+
+
+
+
+
+
+
+});

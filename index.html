@@ -131,10 +131,13 @@
 
     <div id="petitionModal" class="modal">
       <span class="close">&times;</span>
-      <div class="petition-header">
-        <div>
-          <h2 class="petition-title">Sign Our Petition</h2>
-        </div>
+
+      <div class="titleHeader">
+        <h2 class="petition-title">Sign Our Petition</h2>
+      </div>
+
+      <div class="formTitleContainer">
+
 
       </div>
 
@@ -155,17 +158,14 @@
             technology!</p>
         </div>
 
-        <div class="formTitleContainer">
-          <div>
-            <h3 class="petition-form-title">Sign the Petition</h3>
-          </div>
 
-          <div>
-            <h3>Supporters</h3>
-          </div>
-        </div>
+
+
         <div class="formContainer">
           <div>
+            <div>
+              <h3 class="petition-form-title">Sign the Petition</h3>
+            </div>
             <form>
               <div class="petition-form">
                 <label for="name">Name:</label>
@@ -176,17 +176,25 @@
                 <input type="email" id="email" required />
               </div>
               <div class="signBtnContainer">
-                <button class="btn" id="signButton" type="submit">Sign</button>
+                <button class="btn" id="signButton" type="submit">Sign Now</button>
               </div>
             </form>
           </div>
-          <div class="support">
 
+          <div>
+            <div>
+              <h3>Supporters</h3>
+            </div>
+            <div class="support">
+              <p id="numSignatures"></p>
 
+            </div>
           </div>
         </div>
+
       </div>
     </div>
+  </div>
 
   </div>
 
