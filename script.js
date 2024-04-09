@@ -59,9 +59,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-function validateForm() {
+function validateForm(event) {
+  event.preventDefault();
   let containsErrors = false;
   const petitionInputs = document.querySelectorAll(".petition-form input");
+  // Assuming petitionForm is the form to submit
+const petitionForm = document.querySelector(".petition-form");
+
+// Attach the event listener to the 'submit' event of the form
+petitionForm.addEventListener('submit', validateForm);
 
   for (let i = 0; i < petitionInputs.length; i++) {
     if (petitionInputs[i].value.length < 2) {
@@ -72,11 +78,19 @@ function validateForm() {
     }
   }
 
-  // If there are no errors, call addSignature()
+  // If there are no errors, call addSignature() and clear the form
   if (!containsErrors) {
     addSignature();
+
+    for (let i = 0; i < petitionInputs.length; i++) {
+      petitionInputs[i].value = "";
+    }
+
+    containsErrors = false;
   }
 }
+
+signNowButton.addEventListener('click', validateForm);
 
 function addSignature() {
   const name = document.getElementById("name").value;
