@@ -301,6 +301,14 @@ img {
 }
 
 /* Validation Form */
+.petition {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+
 .error {
   border-style: solid;
   border-width: 2px;
@@ -350,6 +358,12 @@ img {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+
+.petition-title {
+  font-family: "Changa", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
 }
 
 .petition-info {

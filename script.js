@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", function() {
 // Toggle dark mode class
 function darkMode() {
   document.body.classList.toggle("dark-mode");
@@ -34,72 +35,20 @@ function scrollToTop() {
   });
 }
 
-// Validation form function
-const validateForm = () => {
-  let containsErrors = false;
-  let petitionInputs = document.getElementById("sign-petition").elements;
 
-  for (let i = 0; i < petitionInputs.length; i++) {
-    if (petitionInputs[i].value.length < 2) {
-      petitionInputs[i].classList.add("error");
-      containsErrors = true;
-    } else {
-      petitionInputs[i].classList.remove("error");
-    }
-  }
 
-  if (!containsErrors) {
-    addSignature();
 
-    for (let i = 0; i < petitionInputs.length; i++) {
-      petitionInputs[i].value = "";
-    }
 
-    containsErrors = false;
-  }
-};
 
-// Event listener to trigger form validation on button click
-signNowButton.addEventListener("click", validateForm);
 
-// Validation Form
 
-const petitionModal = document.getElementById("petitionModal");
-const petitionBtn = document.getElementById("sign-petition");
-const closeBtn = document.getElementsByClassName("close")[0];
-const signNowButton = document.getElementById("signButton");
 
-petitionBtn.onclick = function () {
-  petitionModal.style.display = "block";
-};
 
-closeBtn.onclick = function () {
-  petitionModal.style.display = "none";
-};
 
-signNowButton.onclick = validateForm;
 
-function validateForm() {
-  let containsErrors = false;
-  let petitionInputs = document.getElementById("sign-petition").elements;
 
-  for (let i = 0; i < petitionInputs.length; i++) {
-    if (petitionInputs[i].value.length < 2) {
-      petitionInputs[i].classList.add("error");
-      containsErrors = true;
-    } else {
-      petitionInputs[i].classList.remove("error");
-    }
-  }
 
-  if (!containsErrors) {
-    addSignature();
 
-    for (let i = 0; i < petitionInputs.length; i++) {
-      petitionInputs[i].value = "";
-    }
 
-    containsErrors = false;
-    petitionModal.style.display = "none"; // Close the modal after successful submission
-  }
-}
+
+});
