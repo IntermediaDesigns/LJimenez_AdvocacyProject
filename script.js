@@ -35,6 +35,31 @@ function scrollToTop() {
   });
 }
 
+const validateForm = () => {
+  let containsErrors = false;
+  let petitionInputs = document.getElementById("sign-petition").elements;
+
+  for (let i = 0; i < petitionInputs.length; i++) {
+    if (petitionInputs[i].value.length < 2) {
+      petitionInputs[i].classList.add('error');
+      containsErrors = true;
+    } else {
+      petitionInputs[i].classList.remove('error');
+    }
+  }
+
+  if (!containsErrors) {
+    addSignature();
+
+    for (let i = 0; i < petitionInputs.length; i++) {
+      petitionInputs[i].value = "";
+    }
+
+    containsErrors = false;
+  }
+}
+
+signNowButton.addEventListener('click', validateForm);
 
 
 
