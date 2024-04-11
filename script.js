@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+
   // Toggle dark mode class
   function darkMode() {
     document.body.classList.toggle("dark-mode");
@@ -107,8 +107,3 @@ function addSignature() {
 
 
 
-
-
-
-
-});
