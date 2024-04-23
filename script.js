@@ -76,9 +76,16 @@ function validateForm(event) {
     }
   }
 
-  // If there are no errors, call addSignature(), show the modal, and clear the form
-  if (!containsErrors) {
-    addSignature();
+  // Select the errorText div
+  const errorText = document.querySelector(".errorText");
+
+  // If there are errors, show the error message
+  if (containsErrors) {
+    errorText.textContent = "You must enter all fields to submit.";
+    errorText.style.color = "red";
+  } else {
+    // If there are no errors, call addSignature(), show the modal, and clear the form
+    addSignature(name, hometown);
 
     // Show the modal
     submitModal.style.display = "block";
@@ -91,6 +98,9 @@ function validateForm(event) {
     for (let i = 0; i < petitionInputs.length; i++) {
       petitionInputs[i].value = "";
     }
+
+    // Clear the error message
+    errorText.textContent = "";
   }
 }
 
@@ -119,3 +129,11 @@ function addSignature() {
   const submitText = document.querySelector(".submitText");
   submitText.textContent = `Thank you ${name} from ${hometown} for signing our petition! Your support gives a chance for children to learn coding.`;
 }
+
+var animation = lottie.loadAnimation({
+  container: document.getElementById('lottie-animation'), // the dom element that will contain the animation
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: './img/animation.json' // the path to the animation json
+});

@@ -424,9 +424,7 @@ input:valid {
 .petition-form {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
+  flex-direction: column;
   width: 250px;
 }
 
@@ -438,6 +436,7 @@ input:valid {
 
 label {
   margin-top: 20px;
+  text-align: left !important;
 }
 
 .signBtnContainer {
@@ -460,6 +459,7 @@ label {
   z-index: 1000;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   background-color: #1C58A1;
   padding: 1rem;
@@ -487,4 +487,17 @@ label {
   height: auto;
   border-radius: 10px;
   box-shadow: rgb(0 0 0) 5px 5px 25px -11px;
+}
+
+
+#lottie-animation {
+  display: flex;
+  width: 300px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.supporterTitle, .petition-form-title {
+  text-align: center;
 }

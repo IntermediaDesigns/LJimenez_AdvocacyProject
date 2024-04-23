@@ -25,6 +25,7 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <script src="script.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js"></script>
 </head>
 
 <body>
@@ -134,12 +135,8 @@
 
       <div class="titleHeader">
         <h2 class="petition-title">Sign Our Petition</h2>
-        
       </div>
-      
       <div class="modal-content">
-
-
         <div class="petition-info">
           <img class="petitionImg" src="./img/petition.png" alt="petition" />
           <p class="petitionP">Empower Children with ADHD and Disabilities through Coding
@@ -156,6 +153,7 @@
         </div>
 
         <div class="submit-modal" style="display: none;">
+          <div id="lottie-animation"></div>
           <div class="submit-content">
             <p class="submitText"></p>
           </div>
@@ -178,13 +176,15 @@
               </div>
               <div class="signBtnContainer">
                 <button class="btn" id="signButton" type="submit">Sign Now</button>
+                
               </div>
+              <div class="errorText"></div>
             </form>
           </div>
 
           <div>
             <div>
-              <h3>Supporters</h3>
+              <h3 class="supporterTitle">Supporters</h3>
             </div>
             <div class="support">
               <p id="numSignatures"></p>
