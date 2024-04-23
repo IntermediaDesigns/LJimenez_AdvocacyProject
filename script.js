@@ -1,4 +1,3 @@
-
   // Toggle dark mode class
   function darkMode() {
     document.body.classList.toggle("dark-mode");
@@ -61,8 +60,8 @@
     event.preventDefault();
     let containsErrors = false;
     const petitionInputs = document.querySelectorAll(".petition-form input");
-    
-  
+
+
     for (let i = 0; i < petitionInputs.length; i++) {
       if (petitionInputs[i].value.length < 2) {
         containsErrors = true;
@@ -104,6 +103,3 @@ function addSignature() {
   totalSignatures++;
   numSignatures.innerHTML = `Total Signatures: ${totalSignatures}`;
 }
-
-
-
