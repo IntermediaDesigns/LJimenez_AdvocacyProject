@@ -36,52 +36,64 @@
 
   // Validation Form
 
-  // First, get the button and the modal by their IDs
-  var btn = document.querySelector(".petitionBtn .btn");
-  var modal = document.getElementById("petitionModal");
+  // First, get the button and the petition modal by their IDs
+var btn = document.querySelector(".petitionBtn .btn");
+var petitionModal = document.getElementById("petitionModal");
 
-  // Then, add an event listener to the button
-  btn.addEventListener("click", function () {
-    // When the button is clicked, change the display style of the modal to "block"
-    modal.style.display = "block";
-  });
+// Then, add an event listener to the button
+btn.addEventListener("click", function () {
+  // When the button is clicked, change the display style of the petition modal to "block"
+  petitionModal.style.display = "block";
+});
 
-  // First, get the close button by its class
-  var closeBtn = document.querySelector(".close");
+// Get the submit modal and the close button by their classes
+var submitModal = document.querySelector(".submit-modal");
+var closeBtn = document.querySelector(".close");
 
-  // Then, add an event listener to the close button
-  closeBtn.addEventListener("click", function () {
-    // When the close button is clicked, change the display style of the modal to "none"
-    modal.style.display = "none";
-  });
+// Then, add an event listener to the close button
+closeBtn.addEventListener("click", function () {
+  // When the close button is clicked, change the display style of the submit modal to "none"
+  submitModal.style.display = "none";
+});
 
+function validateForm(event) {
+  event.preventDefault();
+  let containsErrors = false;
+  const petitionInputs = document.querySelectorAll(".petition-form input");
+  let name, hometown;
 
-  function validateForm(event) {
-    event.preventDefault();
-    let containsErrors = false;
-    const petitionInputs = document.querySelectorAll(".petition-form input");
-
-
-    for (let i = 0; i < petitionInputs.length; i++) {
-      if (petitionInputs[i].value.length < 2) {
-        containsErrors = true;
-        petitionInputs[i].classList.add("error");
-      } else {
-        petitionInputs[i].classList.remove("error");
+  for (let i = 0; i < petitionInputs.length; i++) {
+    if (petitionInputs[i].value.length < 2) {
+      containsErrors = true;
+      petitionInputs[i].classList.add("error");
+    } else {
+      petitionInputs[i].classList.remove("error");
+      if (petitionInputs[i].name === "name") {
+        name = petitionInputs[i].value;
+      } else if (petitionInputs[i].name === "hometown") {
+        hometown = petitionInputs[i].value;
       }
     }
+  }
 
-  // If there are no errors, call addSignature() and clear the form
+  // If there are no errors, call addSignature(), show the modal, and clear the form
   if (!containsErrors) {
     addSignature();
+
+    // Show the modal
+    submitModal.style.display = "block";
+
+    // Hide the modal after 10 seconds
+    setTimeout(function() {
+      submitModal.style.display = "none";
+    }, 10000);
 
     for (let i = 0; i < petitionInputs.length; i++) {
       petitionInputs[i].value = "";
     }
-
-    containsErrors = false;
   }
 }
+
 const signNowButton = document.getElementById('signButton');
 const petitionForm = document.querySelector('.petition-form');
 signNowButton.addEventListener("click", validateForm);
@@ -102,4 +114,8 @@ function addSignature() {
   const numSignatures = document.getElementById("numSignatures");
   totalSignatures++;
   numSignatures.innerHTML = `Total Signatures: ${totalSignatures}`;
+
+  // Select the submitText element and update its text content
+  const submitText = document.querySelector(".submitText");
+  submitText.textContent = `Thank you ${name} from ${hometown} for signing our petition! Your support gives a chance for children to learn coding.`;
 }
