@@ -96,7 +96,7 @@ img {
 .bgimg-1 {
   background-position: center;
   background-size: cover;
-  background-image: url("/img/bkg.png");
+  background-image: url("./img/bkg.png");
   min-height: 100%;
   margin-top: 87px;
 }
